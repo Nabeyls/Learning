@@ -1,18 +1,505 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#121b31"><title>SpeakLab · Nabil's Mandarin</title><style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
-:root{--bg:#0b1221;--panel:#151f34;--panel2:#1a2941;--ink:#f6f9ff;--muted:#a1b0c7;--mint:#68e7ba;--blue:#79b6ff;--pink:#ffabca;--line:#2b3d56;--yellow:#ffe49c}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#20375a 0%,var(--bg) 58%);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:default}.shell{max-width:1140px;margin:auto;padding:24px 18px 90px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:25px}.brand{font-weight:800;letter-spacing:-.7px;font-size:24px}.brand .mark{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:14px;background:var(--mint);color:#0b1221;margin-right:9px}.tag{font-size:12px;color:var(--mint);background:#1a3e3b;padding:9px 12px;border-radius:50px}.hero{padding:30px;border-radius:27px;background:linear-gradient(135deg,#273f61,#15273e 78%);border:1px solid #416184;display:grid;grid-template-columns:1.6fr 1fr;gap:20px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800;color:var(--mint)}h1{font-size:clamp(29px,4vw,44px);line-height:1.14;letter-spacing:-1.2px;margin:12px 0}p{color:var(--muted);line-height:1.6}.hero p{max-width:580px}.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.pill{background:#344d69;padding:8px 12px;border-radius:50px;font-size:12px;color:#e1eeff}.hero-stat{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border-radius:20px;background:#10243d;padding:18px}.hero-stat .num{font-size:68px;font-weight:800;color:var(--mint)}.hero-stat small{color:var(--muted)}nav{display:flex;gap:9px;flex-wrap:wrap;margin:24px 0}nav button,.ghost{background:var(--panel);color:var(--muted);border:1px solid var(--line);padding:12px 17px;border-radius:13px;font-weight:700}nav button.active{color:#09221c;background:var(--mint);border-color:var(--mint)}.screen{display:none}.screen.active{display:block}.cols{display:grid;grid-template-columns:1.4fr 1fr;gap:17px}.card{background:var(--panel);border:1px solid var(--line);border-radius:21px;padding:23px;margin-bottom:17px}.card h2{font-size:20px;margin:0 0 11px}.card h3{font-size:15px;color:var(--mint);margin:0 0 8px}.muted{color:var(--muted)}.btn{border:0;border-radius:13px;padding:12px 18px;font-weight:800;background:var(--mint);color:#082319}.btn.alt{background:#2c4562;color:#e7f3ff}.btn.pink{background:var(--pink);color:#391827}.btn:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--yellow)}.stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}.lesson{display:flex;align-items:center;gap:14px;padding:15px;border:1px solid var(--line);border-radius:14px;margin:9px 0;background:#1a2940}.lesson .icon{width:42px;height:42px;display:grid;place-items:center;background:#304968;border-radius:13px;font-size:19px}.lesson .grow{flex:1}.lesson b{display:block}.lesson small{color:var(--muted)}.mini{font-size:12px}.phrase{border:1px solid var(--line);border-radius:19px;padding:20px;margin:13px 0;background:var(--panel2)}.hanzi{font-size:36px;font-weight:800}.roman{color:var(--mint);font-size:20px;font-weight:800;margin:6px 0}.phrase-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.dots{display:flex;gap:8px;margin:16px 0}.dot{height:7px;flex:1;border-radius:50px;background:#2e435c}.dot.on{background:var(--mint)}.choice{display:block;width:100%;background:#1f324c;color:#e9f1ff;border:1px solid #37516d;border-radius:14px;padding:16px;text-align:left;margin:9px 0}.choice:hover{border-color:var(--mint)}.choice.correct{background:#204b40;border-color:var(--mint)}.choice.wrong{background:#523044;border-color:var(--pink)}.bubble{max-width:83%;padding:14px 17px;border-radius:17px;margin:13px 0;line-height:1.55}.bubble.bot{background:#29435e;border-bottom-left-radius:4px}.bubble.me{background:#205044;border-bottom-right-radius:4px;margin-left:auto}.bubble .roman{font-size:15px}.bubble small{display:block;color:#c2d0df}.feedback{padding:13px 15px;border-radius:13px;margin:12px 0;background:#2e4059;color:#f1f6ff;line-height:1.5}.feedback.good{background:#235344}.feedback.warn{background:#593c35}.input{background:#0d1a2d;color:white;border:1px solid #3a526d;border-radius:12px;padding:12px;width:100%;margin:8px 0}.bar{height:11px;background:#2b3d52;overflow:hidden;border-radius:12px}.fill{height:100%;background:linear-gradient(90deg,#68e7ba,#89b6fc);border-radius:12px;transition:width .3s}.metric{font-size:32px;font-weight:800;color:var(--mint)}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric-tile{background:#20314a;padding:15px;border-radius:15px}.metric-tile small{display:block;color:var(--muted)}.hidden{display:none!important}footer{font-size:12px;color:var(--muted);margin-top:22px;line-height:1.7}a{color:var(--mint)}.switch{display:flex;align-items:center;gap:10px}.confetti{text-align:center;font-size:44px}.tip{background:#20344c;padding:12px;border-left:3px solid var(--mint);border-radius:5px 12px 12px 5px;font-size:13px}.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.word{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}@media(max-width:740px){.hero,.cols{grid-template-columns:1fr}.hero-stat{flex-direction:row;gap:20px}.hero-stat .num{font-size:48px}header{flex-wrap:wrap}.card{padding:17px}.hero{padding:20px}.metric-row{grid-template-columns:1fr 1fr}.bubble{max-width:94%}}
-</style></head><body><div class="shell"><header><div class="brand"><span class="mark">说</span>SpeakLab <span style="font-size:12px;font-weight:500;color:var(--muted)">· Mandarin for Nabil</span></div><span class="tag">🇲🇾 SPEAK FIRST • BEGINNER A0</span></header><div id="setupTip" style="background:#3e3440;border:1px solid #9a7a4b;color:#fff1ce;border-radius:15px;padding:14px;margin-bottom:18px;font-size:14px;line-height:1.6"><b>📱 Before you play:</b> If this is a ChatGPT or Google Drive file preview, buttons and microphone may be blocked. Download this HTML and open it directly in Chrome/Safari; for dependable voice recognition, publish it on HTTPS (such as GitHub Pages). Allow microphone access when prompted. Roleplay works by selecting replies even if voice recognition is unavailable.</div><section class="hero"><div><div class="eyebrow">YOUR DAILY MANDARIN ADVENTURE</div><h1>Speak more.<br><span style="color:var(--mint)">Connect better.</span></h1><p>Short voice-first lessons for real conversations with friends and teammates. Listen, speak, play and see your progress — no character memorisation required.</p><div class="pills"><span class="pill">🎤 Voice practice</span><span class="pill">💬 Conversation simulator</span><span class="pill">🎮 Mini games</span><span class="pill">📈 Private progress</span></div></div><div class="hero-stat"><div><div class="num" id="xpHero">0</div><small>YOUR XP</small></div><div style="font-size:42px">🏆</div></div></section><nav id="nav"><button data-tab="home" class="active">🏠 My path</button><button data-tab="learn">🎧 Learn</button><button data-tab="chat">💬 Roleplay</button><button data-tab="game">🎮 Games</button><button data-tab="progress">📈 Progress</button></nav>
-<section class="screen active" id="home"><div class="cols"><div><div class="card"><div class="eyebrow">START HERE</div><h2>Your 7-day speaking path</h2><p>Complete these in order. Revisit anything you find difficult.</p><div id="lessonList"></div></div><div class="card"><h2>🌱 Today's tiny challenge</h2><p>Listen to “nǐ hǎo,” say it aloud, then start a workplace greeting roleplay. Small wins build real confidence.</p><div class="stack"><button class="btn" onclick="openLesson(0)">Start 5-minute lesson →</button><button class="btn alt" onclick="tab('chat')">Try roleplay</button></div></div></div><div><div class="card"><h2>Your learning rhythm</h2><p>📖 <b style="color:white">See</b> pinyin and meaning<br>🔊 <b style="color:white">Hear</b> native-language synthesis<br>🎙️ <b style="color:white">Say</b> it back<br>💬 <b style="color:white">Use</b> it in a conversation</p><p class="tip">Voice recognition is browser-dependent and approximate; it checks recognised words, not accurate pronunciation or tones.</p></div><div class="card"><h2>🎯 This week's mission</h2><p>Learn how to greet, thank, say goodbye and introduce yourself.</p><div class="bar"><div id="weekFill" class="fill" style="width:0"></div></div><p id="weekText" class="mini"></p></div><div class="card"><h2>🔒 Your data stays with you</h2><p>Progress saves in this browser only. Export it whenever you want a review or to move devices. Nothing automatically syncs to ChatGPT or Google.</p><button class="btn alt" onclick="tab('progress')">View progress →</button></div></div></div></section>
-<section class="screen" id="learn"><div class="cols"><div class="card"><div class="row"><div><div class="eyebrow" id="lessonTag">LESSON 1</div><h2 id="lessonTitle">Greetings</h2></div><button class="ghost" onclick="tab('home')">← Path</button></div><p id="lessonDesc"></p><div class="dots" id="lessonDots"></div><div id="phraseCard"></div><div id="listenFeedback" class="feedback hidden" aria-live="polite"></div><div class="stack"><button class="btn alt" id="backPhrase" onclick="stepPhrase(-1)">← Back</button><button class="btn" id="nextPhrase" onclick="stepPhrase(1)">Next phrase →</button></div></div><div class="card"><h2>🎤 Voice coach</h2><p>Press <b style="color:white">Listen</b> to hear the sentence. Then select <b style="color:white">Speak</b> and allow microphone access if supported.</p><div class="tip">Speech-to-text may mishear accents and tones. A recognised phrase is an encouraging practice result, not a certified pronunciation grade. Use the manual button if speech recognition is unavailable.</div><div class="stack"><button class="btn alt" onclick="slowVoice()">🐢 Hear slowly</button><button class="btn pink" onclick="speakPractice()">🎙️ Speak now</button></div><p class="mini" id="voiceState" aria-live="polite">Microphone not started.</p><div id="transcript" class="feedback hidden"></div><button class="ghost" onclick="recordManual()">I practised aloud ✓</button></div></div></section>
-<section class="screen" id="chat"><div class="cols"><div class="card"><div class="eyebrow">REAL-LIFE ROLEPLAY</div><h2>💼 Meeting a Chinese-speaking teammate</h2><p>The conversation partner plays a scripted colleague. Answer using your voice or tap an answer. Each turn builds toward a real introduction.</p><div class="stack"><button class="btn alt" onclick="resetChat()">↻ Restart roleplay</button><button class="btn alt" onclick="repeatBot()">🔊 Hear colleague again</button></div><div id="chatBubbles" aria-live="polite"></div><div id="chatChoices"></div><div class="stack"><button class="btn pink" onclick="chatMic()">🎙️ Reply by voice</button></div><p class="mini" id="chatStatus">For unsupported microphones, choose the answer you would say aloud.</p></div><div class="card"><h2>Conversation tips</h2><p>💡 Don't translate every word in your head. Learn whole phrases you can use immediately.</p><p>🗣️ Repeat after your teammate and try speaking at a natural pace.</p><p>🎯 When you feel ready, cover the English meaning and try again.</p><label class="switch"><input type="checkbox" id="hideEnglish" onchange="renderChat()"> Hide English translations</label></div></div></section>
-<section class="screen" id="game"><div class="cols"><div class="card"><div class="eyebrow">HEAR • THINK • CHOOSE</div><h2>🎮 Listening Quest</h2><p>Listen to a Mandarin phrase and select its meaning. Answer 5 rounds and earn XP.</p><div class="metric" id="gameRound">0 / 5</div><div class="stack"><button class="btn" onclick="startGame()">▶ Start new game</button><button class="btn alt" onclick="hearGame()">🔊 Listen again</button></div><div id="gameArea"><p class="muted">Press Start when you're ready.</p></div></div><div class="card"><h2>🌟 How the game works</h2><p>Each correct answer earns 10 XP. Incorrect answers become review opportunities. Complete the session to see your accuracy.</p><div class="tip">Recognition and quiz scores measure practice performance, not formal Chinese-language proficiency.</div></div></div></section>
-<section class="screen" id="progress"><div class="cols"><div><div class="card"><h2>📈 Your learning dashboard</h2><div class="metric-row"><div class="metric-tile"><span class="metric" id="mXp">0</span><small>XP earned</small></div><div class="metric-tile"><span class="metric" id="mLessons">0</span><small>Lessons completed</small></div><div class="metric-tile"><span class="metric" id="mAccuracy">—</span><small>Game accuracy</small></div></div><br><h3>Your activity</h3><div id="activity"></div></div><div class="card"><h2>🧠 Your next step</h2><p id="advice">Complete a lesson to receive your first recommendation.</p></div></div><div><div class="card"><h2>📝 Self-reflection</h2><p>How confident did you feel speaking today?</p><select class="input" id="confidence"><option value="1">1 · Not confident yet</option><option value="2">2 · Some hesitation</option><option value="3">3 · Getting comfortable</option><option value="4">4 · Mostly confident</option><option value="5">5 · Comfortable</option></select><input id="reflection" class="input" placeholder="What did you struggle with?" maxlength="500"><button class="btn" onclick="saveReflection()">Save reflection</button><p class="mini" id="saveMsg"></p></div><div class="card"><h2>📦 Own your learning data</h2><p>Download a JSON progress report. Upload that file into a ChatGPT conversation for a personalised assessment; nothing is sent automatically.</p><div class="stack"><button class="btn" onclick="exportJSON()">⬇ Export progress JSON</button><button class="btn alt" onclick="exportCSV()">⬇ Export activity CSV</button></div><label class="mini" style="display:block;margin-top:16px">Restore a previous JSON backup <input type="file" accept=".json,application/json" onchange="importJSON(event)" class="input"></label><div class="stack"><button class="ghost" onclick="resetData()">Reset all local data</button></div></div></div></div></section><footer>SpeakLab · Single-file learning app · Works offline after first load with browser voices installed. Voice synthesis and microphone access depend on browser/device settings; speech recognition may require internet and is often unavailable for local HTML files. This is a structured learning simulation, not a live conversational AI or professional pronunciation assessor.</footer></div>
+<title>MIRAD Semester 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#f2f4f8;--surface:#ffffff;--surface2:#eef1f6;--line:#dce2ec;--text:#141a27;--muted:#5a6578;
+  --accent:#0d8a73;--accent-soft:#d9f3ec;--accent-ink:#ffffff;
+  --warn-bg:#fff4dc;--warn-line:#f0d59c;--warn-text:#6f4c0c;
+  --c-MIR710:#2f8f2a;--c-MIR705:#b86e00;--c-MIR703:#138a86;--c-MIR704:#7a4fe0;
+  --peace:#7a4fe0;--ai:#0d8a73;
+  --shadow:0 1px 2px rgba(20,26,39,.05),0 8px 24px -12px rgba(20,26,39,.12);
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;--bg:#0b101b;--surface:#141b29;--surface2:#1b2436;--line:#263148;--text:#ecf1fa;--muted:#94a0b6;
+  --accent:#7fe0c4;--accent-soft:#16332f;--accent-ink:#0b231e;
+  --warn-bg:#2b261b;--warn-line:#5e4d2a;--warn-text:#f2d8a2;
+  --c-MIR710:#6fd066;--c-MIR705:#ffbd5a;--c-MIR703:#4fd0ca;--c-MIR704:#b494ff;
+  --peace:#c6a8ff;--ai:#7fe0c4;--shadow:0 1px 0 rgba(255,255,255,.03) inset,0 10px 30px -14px rgba(0,0,0,.6);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;--bg:#0b101b;--surface:#141b29;--surface2:#1b2436;--line:#263148;--text:#ecf1fa;--muted:#94a0b6;
+  --accent:#7fe0c4;--accent-soft:#16332f;--accent-ink:#0b231e;
+  --warn-bg:#2b261b;--warn-line:#5e4d2a;--warn-text:#f2d8a2;
+  --c-MIR710:#6fd066;--c-MIR705:#ffbd5a;--c-MIR703:#4fd0ca;--c-MIR704:#b494ff;
+  --peace:#c6a8ff;--ai:#7fe0c4;--shadow:0 1px 0 rgba(255,255,255,.03) inset,0 10px 30px -14px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:22px 60px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+.muted{color:var(--muted)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* Header */
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.top h1{font-size:clamp(28px,4.2vw,40px);font-weight:800;line-height:1.1;margin-top:4px}
+.top p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.hdr-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:10px 15px;font-weight:700;font-size:14px;text-decoration:none;border:1px solid var(--line);background:var(--surface);cursor:pointer;transition:transform .15s,background .15s,border-color .15s}
+.btn:hover{transform:translateY(-1px);border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.btn.sm{padding:7px 11px;font-size:13px;border-radius:10px}
+
+/* Tabs */
+.tabbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-inline:-20px;padding:10px 20px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.tabs{position:relative;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;background:var(--surface2);border-radius:14px;padding:4px;width:max-content;max-width:100%}
+.tabs::-webkit-scrollbar{display:none}
+.tab{position:relative;z-index:1;border:0;background:none;padding:9px 16px;border-radius:10px;font-weight:600;font-size:14px;color:var(--muted);cursor:pointer;white-space:nowrap;transition:color .2s}
+.tab[aria-selected="true"]{color:var(--text)}
+.tab .n{display:inline-block;margin-left:6px;font-size:11px;padding:1px 7px;border-radius:99px;background:var(--accent-soft);color:var(--accent);font-weight:700}
+.tab-ind{position:absolute;z-index:0;top:4px;bottom:4px;left:0;border-radius:10px;background:var(--surface);box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.2,.8,.2,1),width .35s cubic-bezier(.2,.8,.2,1)}
+
+.panel{animation:rise .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:.001;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+.sec-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:0 0 12px;flex-wrap:wrap}
+.sec-title h2{font-size:19px;font-weight:700}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.stack{display:grid;gap:16px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--co);flex:0 0 9px}
+
+/* Next up */
+.next{position:relative;overflow:hidden;border-color:color-mix(in srgb,var(--co) 45%,var(--line))}
+.next::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 100% 0%,color-mix(in srgb,var(--co) 18%,transparent),transparent 60%);pointer-events:none}
+.next>*{position:relative}
+.next .code{font-family:var(--display);font-size:15px;font-weight:800;color:var(--co);letter-spacing:.02em}
+.next h3{font-size:clamp(20px,2.6vw,26px);margin:4px 0 12px;line-height:1.2}
+.next .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.count{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.count .big{font-family:var(--display);font-size:clamp(28px,4vw,38px);font-weight:800;line-height:1}
+.live{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:var(--co)}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--co);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--co) 60%,transparent)}100%{box-shadow:0 0 0 12px transparent}}
+
+/* Week strip */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.wd{background:var(--surface2);border-radius:12px;padding:10px 8px;min-height:92px;border:1px solid transparent;animation:rise .4s both;animation-delay:calc(var(--i)*40ms)}
+.wd.today{border-color:var(--accent);background:var(--accent-soft)}
+.wd .dn{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.wd .dd{font-family:var(--display);font-weight:700;font-size:18px}
+.wev{margin-top:6px;font-size:11.5px;line-height:1.3;border-left:3px solid var(--co);padding-left:6px}
+.wev b{display:block;font-weight:700}
+
+.mini-assn{display:grid;gap:12px}
+.ma{display:flex;gap:14px;align-items:center}
+.ring{flex:0 0 52px}
+.ring circle{fill:none;stroke-width:5}
+.ring .bg{stroke:var(--surface2)}
+.ring .fg{stroke:var(--co);stroke-linecap:round;transition:stroke-dashoffset .8s cubic-bezier(.2,.8,.2,1);transform:rotate(-90deg);transform-origin:50% 50%}
+.ring text{font:700 12px var(--body);fill:var(--text)}
+.ma h4{margin:0;font-size:14px}
+.ma small{color:var(--muted);font-size:12.5px}
+
+.keydates{display:grid;gap:10px}
+.kd{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start;font-size:14px}
+.kd b{font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--muted);padding-top:1px}
+
+/* Calendar */
+.cal-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:16px;align-items:start}
+.cal-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.cal-head h2{font-size:22px;font-weight:800;margin-right:auto;min-width:0}
+.iconbtn{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:16px;display:grid;place-items:center;transition:border-color .15s,transform .15s}
+.iconbtn:hover{border-color:var(--accent)}
+.iconbtn:active{transform:scale(.94)}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.fchip{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:13px;font-weight:600;transition:opacity .2s,background .2s}
+.fchip[aria-pressed="false"]{opacity:.45}
+.fchip[aria-pressed="false"] .dot{background:transparent;box-shadow:inset 0 0 0 2px var(--co)}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.cal.slide-l{animation:slideL .35s cubic-bezier(.2,.8,.2,1)}
+.cal.slide-r{animation:slideR .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes slideL{from{opacity:.2;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes slideR{from{opacity:.2;transform:translateX(-24px)}to{opacity:1;transform:none}}
+.wk{text-align:center;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:4px 0}
+.day{position:relative;text-align:left;min-height:96px;padding:7px;border-radius:11px;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:flex;flex-direction:column;gap:3px;overflow:hidden;transition:transform .15s,border-color .15s,box-shadow .15s}
+.day:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 50%,var(--line));box-shadow:var(--shadow)}
+.day.other{opacity:.35}
+.day.today .num{background:var(--accent);color:var(--accent-ink)}
+.day.sel{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 35%,transparent)}
+.day.brk{background:repeating-linear-gradient(135deg,var(--surface),var(--surface) 6px,var(--surface2) 6px,var(--surface2) 12px)}
+.num{font-weight:700;font-size:12.5px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.chip{font-size:11px;line-height:1.25;padding:3px 6px;border-radius:6px;background:color-mix(in srgb,var(--co) 14%,var(--surface));border-left:3px solid var(--co);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip b{font-weight:700}
+.chip.assn{--co:var(--peace);font-weight:600}
+.chip.assn.ai{--co:var(--ai)}
+.dots{display:none;gap:3px;flex-wrap:wrap;margin-top:auto}
+.dots .dot{width:7px;height:7px;flex-basis:7px}
+.dots .dot.sq{border-radius:2px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:12px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:10px;border-radius:3px;display:inline-block}
+
+.dayview{position:sticky;top:90px}
+.dayview h3{font-size:20px;margin:2px 0 14px}
+.ev{border:1px solid var(--line);border-left:4px solid var(--co);border-radius:12px;padding:12px 14px;margin-bottom:10px;background:var(--surface);animation:rise .35s both;animation-delay:calc(var(--i)*60ms)}
+.ev .t{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.ev .c{font-weight:800;color:var(--co);font-family:var(--display)}
+.ev p{margin:2px 0 8px;font-size:13.5px}
+.ev .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.empty{color:var(--muted);font-size:14px;padding:18px 4px}
+
+details.note{margin-top:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+details.note summary{cursor:pointer;padding:13px 16px;font-weight:600;font-size:14px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details.note summary::-webkit-details-marker{display:none}
+details.note summary::after{content:"+";font-weight:700;color:var(--muted);transition:transform .2s}
+details.note[open] summary::after{transform:rotate(45deg)}
+details.note .body{padding:0 16px 14px;font-size:13.5px;color:var(--muted);display:grid;gap:8px}
+details.note .body p{margin:0}
+details.note .body b{color:var(--text)}
+
+/* Courses */
+.courses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.course{position:relative;border-top:4px solid var(--co);display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s;animation:rise .45s both;animation-delay:calc(var(--i)*70ms)}
+.course:hover{transform:translateY(-3px)}
+.course .hd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.course .code{font-family:var(--display);font-weight:800;font-size:24px;color:var(--co)}
+.course h3{font-size:16.5px;font-weight:700;line-height:1.3}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:13.5px;margin:2px 0}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0}
+.course .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding-top:10px;border-top:1px dashed var(--line)}
+.bar{height:6px;background:var(--surface2);border-radius:9px;overflow:hidden;flex:1;min-width:80px}
+.bar i{display:block;height:100%;background:var(--co);border-radius:9px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+
+.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-text);border-radius:14px;padding:13px 16px;font-size:13.5px;line-height:1.6}
+.warn b{font-weight:700}
+
+/* Assignments */
+.assns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.assn{border-top:4px solid var(--co);display:flex;flex-direction:column;gap:12px}
+.assn .tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--co)}
+.assn h3{font-size:21px;line-height:1.25}
+.assn .hdr{display:flex;gap:14px;justify-content:space-between;align-items:flex-start}
+.assn .explain{background:var(--surface2);border-radius:12px;padding:12px 14px;font-size:13.5px}
+.assn .explain ol{margin:6px 0 0;padding-left:20px;display:grid;gap:3px}
+.assn .explain em{display:block;margin-top:8px;color:var(--muted);font-size:12.5px}
+.check{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;cursor:pointer;font-size:13.5px;transition:background .15s}
+.check:hover{background:var(--surface2)}
+.check input{appearance:none;-webkit-appearance:none;width:20px;height:20px;flex:0 0 20px;margin:0;border-radius:6px;border:2px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
+.check input::after{content:"";width:5px;height:10px;border:solid var(--accent-ink);border-width:0 2.5px 2.5px 0;transform:rotate(45deg) scale(0);margin-top:-2px;transition:transform .2s cubic-bezier(.3,1.6,.5,1)}
+.check input:checked{background:var(--co);border-color:var(--co)}
+.check input:checked::after{transform:rotate(45deg) scale(1)}
+.check input:checked+span{text-decoration:line-through;color:var(--muted)}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+
+.timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;position:relative}
+.tl{border-left:3px solid var(--co);padding:4px 0 4px 12px}
+.tl b{display:block;font-size:13px;font-family:var(--mono);font-weight:500}
+.tl span{font-size:13.5px;color:var(--muted)}
+
+/* MIR710 */
+.weights{display:flex;height:40px;border-radius:12px;overflow:hidden;gap:3px;margin:6px 0 10px}
+.weights div{display:flex;align-items:center;padding:0 10px;font-size:12px;font-weight:700;color:#0b101b;white-space:nowrap;overflow:hidden;transform-origin:left;animation:grow .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*90ms)}
+@keyframes grow{from{transform:scaleX(.2);opacity:.2}to{transform:none;opacity:1}}
+.wlegend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;font-size:13px}
+.wlegend b{display:block;font-size:13.5px}
+.wlegend span{color:var(--muted);font-size:12.5px}
+.weekstrip{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:5px;margin-bottom:16px}
+.wbtn{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 0 6px;cursor:pointer;text-align:center;transition:transform .15s,border-color .15s,background .2s;position:relative}
+.wbtn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.wbtn b{display:block;font-family:var(--display);font-size:16px}
+.wbtn small{display:block;font-size:10px;color:var(--muted);white-space:nowrap}
+.wbtn.past{opacity:.55}
+.wbtn.now::before{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--accent)}
+.wbtn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);opacity:1}
+.wbtn[aria-pressed="true"] small{color:var(--accent-ink)}
+.wbtn .mk{position:absolute;bottom:3px;left:50%;margin-left:-8px;width:16px;height:3px;border-radius:3px;background:var(--mk)}
+.wdetail{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+.wdetail h3{font-size:24px;line-height:1.2;margin:4px 0 8px}
+.kv{display:grid;gap:12px;font-size:14px}
+.kv h4{margin:0 0 3px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kv p{margin:0}
+.takeaway{background:var(--accent-soft);border-radius:14px;padding:14px 16px;font-size:14.5px}
+.takeaway h4{color:var(--accent)}
+.milestone{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-text);border-radius:12px;padding:12px 14px;font-size:13.5px}
+.personal{display:inline-flex;margin-bottom:6px}
+
+footer{margin-top:28px;font-size:12.5px;color:var(--muted);max-width:760px}
+
+@media (max-width:960px){
+  .cal-layout{grid-template-columns:1fr}
+  .dayview{position:static}
+  .grid2,.wdetail{grid-template-columns:1fr}
+  .weekstrip{grid-template-columns:repeat(7,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .courses,.assns,.timeline{grid-template-columns:1fr}
+  .wlegend{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .day{min-height:58px;padding:5px}
+  .day .chip{display:none}
+  .dots{display:flex}
+  .week{grid-template-columns:1fr;gap:6px}
+  .wd{min-height:0;display:grid;grid-template-columns:62px 1fr;align-items:center;gap:10px;padding:8px 12px}
+  .wd .wevs{display:flex;gap:10px;flex-wrap:wrap}
+  .wev{margin-top:0}
+}
+@media (max-width:460px){
+  .cal-head h2{font-size:18px}
+  .cal-head .iconbtn{width:34px;height:34px}
+  .wrap{padding-inline:16px}
+  .tabbar{margin-inline:-16px;padding-inline:16px}
+  .cal{gap:3px}
+  .num{font-size:11.5px;width:22px;height:22px}
+  .card{padding:16px}
+  .kd{grid-template-columns:1fr;gap:2px}
+  .weights div{font-size:10.5px;padding:0 6px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Master in International Relations &amp; Diplomacy · UiTM</div>
+      <h1>Semester 3 planner</h1>
+      <p>Group AM7013P / AM7012P · 28 Sep 2026 – 10 Jan 2027 · Malaysia time</p>
+    </div>
+    <div class="hdr-actions">
+      <a class="btn primary" href="https://docs.google.com/document/d/1zAFOhtnC_G2ZE5-aPUNHJ_2b3PMtZKjgeicyuu9CkSw/edit" target="_blank" rel="noopener">MIR710 Reading Hub ↗</a>
+    </div>
+  </header>
+
+  <div class="tabbar">
+    <div class="tabs" role="tablist" id="tabs">
+      <span class="tab-ind" id="ind"></span>
+      <button class="tab" role="tab" data-tab="overview" id="t-overview">Overview</button>
+      <button class="tab" role="tab" data-tab="calendar" id="t-calendar">Calendar</button>
+      <button class="tab" role="tab" data-tab="courses" id="t-courses">Courses &amp; links</button>
+      <button class="tab" role="tab" data-tab="assignments" id="t-assignments">Assignments<span class="n" id="assnCount">0/10</span></button>
+      <button class="tab" role="tab" data-tab="mir710" id="t-mir710">MIR710 weekly</button>
+    </div>
+  </div>
+
+  <main id="view"></main>
+
+  <footer>Weekly Sep–Nov sessions are provisional: the faculty sheet gives first-class dates and times only, so this planner repeats them weekly through 26 Nov, then follows the separate Dec–Jan weekend timetable. Planning checkpoints are not lecturer-confirmed deadlines. Checklist ticks are saved only in this browser.</footer>
+</div>
+
 <script>
-const lessons=[{name:'Hello & goodbye',desc:'Greet a friend or teammate naturally.',p:[['你好','nǐ hǎo','Hello'],['谢谢','xièxie','Thank you'],['再见','zàijiàn','Goodbye']]},{name:'Meet your teammate',desc:'Introduce yourself and learn someone’s name.',p:[['我叫 Nabil','wǒ jiào Nabil','My name is Nabil'],['你叫什么名字？','nǐ jiào shénme míngzi?','What is your name?'],['很高兴认识你','hěn gāoxìng rènshi nǐ','Nice to meet you']]},{name:'How are you?',desc:'Make a simple connection at work.',p:[['你好吗？','nǐ hǎo ma?','How are you?'],['我很好','wǒ hěn hǎo','I am well'],['你呢？','nǐ ne?','And you?']]},{name:'Be polite',desc:'Use phrases you need with colleagues.',p:[['请','qǐng','Please'],['对不起','duìbuqǐ','Sorry'],['没关系','méi guānxi','No problem']]},{name:'A quick coffee break',desc:'Invite someone and understand basic replies.',p:[['你喝咖啡吗？','nǐ hē kāfēi ma?','Do you drink coffee?'],['我喝咖啡','wǒ hē kāfēi','I drink coffee'],['好的','hǎo de','Okay']]},{name:'At the office',desc:'Talk about your workplace.',p:[['我在这里工作','wǒ zài zhèlǐ gōngzuò','I work here'],['我们是同事','wǒmen shì tóngshì','We are colleagues'],['谢谢你的帮忙','xièxie nǐ de bāngmáng','Thank you for your help']]},{name:'Review & confidence',desc:'Bring everything together in a short introduction.',p:[['你好，我叫 Nabil','nǐ hǎo, wǒ jiào Nabil','Hello, my name is Nabil'],['很高兴认识你','hěn gāoxìng rènshi nǐ','Nice to meet you'],['再见','zàijiàn','Goodbye']]}];
-const defaultData=()=>({version:1,xp:0,completed:[],spoken:0,voiceAttempts:0,voiceMatched:0,games:0,correct:0,rounds:0,chatCompletions:0,reflections:[],activity:[]});let data;try{data={...defaultData(),...JSON.parse(localStorage.getItem('speaklab_v1')||'{}')}}catch(e){data=defaultData()}let li=0,pi=0,chatTurn=0,chatHistory=[],gQ=[],gRound=0,gScore=0,gAnswered=false;const $=id=>document.getElementById(id),save=()=>{try{localStorage.setItem('speaklab_v1',JSON.stringify(data))}catch(e){console.warn('Local storage unavailable',e)}renderStats()},log=(type,details)=>{data.activity.unshift({at:new Date().toISOString(),type,details});data.activity=data.activity.slice(0,350);save()},escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function tab(t){document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===t));if(t==='progress')renderProgress();if(t==='home')renderHome();try{window.scrollTo({top:0,behavior:'smooth'})}catch(e){}}document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));function voice(s,slow=false){if(!('speechSynthesis'in window)){alert('Voice playback is unavailable in this viewer. Open this page directly in Chrome or Safari, ideally via an HTTPS website.');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(s.replace(/Nabil/g,''));u.lang='zh-CN';u.rate=slow?.7:.87;let vs=speechSynthesis.getVoices(),v=vs.find(x=>/^zh[-_]CN/i.test(x.lang))||vs.find(x=>x.lang.toLowerCase().startsWith('zh'));if(v)u.voice=v;speechSynthesis.speak(u)}
-function renderHome(){$('lessonList').innerHTML=lessons.map((l,i)=>`<div class="lesson"><div class="icon">${data.completed.includes(i)?'✅':'🎧'}</div><div class="grow"><b>${i+1}. ${escapeHTML(l.name)}</b><small>${escapeHTML(l.desc)}</small></div><button class="btn alt" onclick="openLesson(${i})">${data.completed.includes(i)?'Review':'Play'} →</button></div>`).join('');$('weekFill').style.width=(data.completed.length/7*100)+'%';$('weekText').textContent=`${data.completed.length} of 7 lessons completed`}
-function openLesson(i){li=i;pi=0;renderPhrase();tab('learn')}function renderPhrase(){let l=lessons[li],p=l.p[pi];$('lessonTag').textContent=`LESSON ${li+1} / 7 • PHRASE ${pi+1} / ${l.p.length}`;$('lessonTitle').textContent=l.name;$('lessonDesc').textContent=l.desc;$('lessonDots').innerHTML=l.p.map((_,i)=>`<span class="dot ${i<=pi?'on':''}"></span>`).join('');$('phraseCard').innerHTML=`<div class="phrase"><div class="hanzi">${escapeHTML(p[0])}</div><div class="roman">${escapeHTML(p[1])}</div><p>${escapeHTML(p[2])}</p><div class="phrase-actions"><button class="btn" onclick="voice(lessons[li].p[pi][0])">🔊 Listen</button><button class="btn alt" onclick="voice(lessons[li].p[pi][0],true)">🐢 Slow</button></div></div>`;$('backPhrase').disabled=pi===0;$('nextPhrase').textContent=pi===l.p.length-1?'Finish lesson ✓':'Next phrase →';$('listenFeedback').classList.add('hidden');$('transcript').classList.add('hidden');$('voiceState').textContent='Listen, then repeat aloud.'}function stepPhrase(d){if(pi+d<0)return;if(pi+d>=lessons[li].p.length){if(!data.completed.includes(li)){data.completed.push(li);data.xp+=30;log('lesson',`Completed lesson ${li+1}: ${lessons[li].name}`)}alert('🎉 Lesson complete! +30 XP if first time. Try the roleplay next.');renderHome();tab('home');return}pi+=d;renderPhrase()}function slowVoice(){voice(lessons[li].p[pi][0],true)}function recognise(onResult){let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$('voiceState').textContent='Microphone recognition unavailable here. Listen and practise aloud, then use “I practised aloud.”';$('chatStatus').textContent='Voice recognition unavailable. Tap an answer after speaking it aloud.';return}try{let r=new SR();r.lang='zh-CN';r.interimResults=false;r.maxAlternatives=2;r.onresult=e=>onResult(Array.from(e.results[0]).map(x=>x.transcript));r.onerror=e=>{let msg='Microphone error: '+e.error+'. Try an HTTPS browser or the manual option.';$('voiceState').textContent=msg;$('chatStatus').textContent=msg};r.start();$('voiceState').textContent='🎙️ Listening — say the phrase now';$('chatStatus').textContent='🎙️ Listening — reply aloud'}catch(e){$('voiceState').textContent='Could not start microphone: '+e.message}}function norm(s){return s.toLowerCase().replace(/[\s，。！？?!.,']/g,'').replace(/nabil/g,'')}function phraseMatch(t,expected){let n=norm(t),exp=norm(expected);return n.includes(exp)||exp.includes(n)&&n.length>=2}function speakPractice(){const expected=lessons[li].p[pi][0];recognise(arr=>{let ok=arr.some(x=>phraseMatch(x,expected));data.voiceAttempts++;if(ok){data.voiceMatched++;data.xp+=5}log('speech',`Lesson ${li+1} phrase ${pi+1}: ${ok?'recognised':'needs review'} · heard ${arr.join(' / ')}`);$('transcript').classList.remove('hidden');$('transcript').textContent=`Heard: ${arr.join(' / ')}. ${ok?'✅ Words recognised (+5 XP). Keep practicing the tones!':'🔁 Not recognised as expected. Listen slowly and try again; recognition can be unreliable.'}`;$('voiceState').textContent='Ready for another try.'})}function recordManual(){data.spoken++;data.xp+=2;log('practice',`Practised lesson ${li+1} phrase ${pi+1} aloud`);$('voiceState').textContent='Great — practice logged (+2 XP). Manual practice is not a pronunciation assessment.'}
-const chat=[{bot:['你好！','nǐ hǎo!','Hello!'],answers:[['你好！','nǐ hǎo!','Hello!',true],['再见！','zàijiàn!','Goodbye!',false],['谢谢！','xièxie!','Thank you!',false]]},{bot:['你叫什么名字？','nǐ jiào shénme míngzi?','What is your name?'],answers:[['我叫 Nabil。','wǒ jiào Nabil','My name is Nabil.',true],['我很好。','wǒ hěn hǎo','I am fine.',false],['再见！','zàijiàn!','Goodbye!',false]]},{bot:['很高兴认识你！','hěn gāoxìng rènshi nǐ!','Nice to meet you!'],answers:[['我也很高兴认识你！','wǒ yě hěn gāoxìng rènshi nǐ','Nice to meet you too!',true],['你喝咖啡吗？','nǐ hē kāfēi ma','Do you drink coffee?',false],['对不起。','duìbuqǐ','Sorry.',false]]},{bot:['你喝咖啡吗？','nǐ hē kāfēi ma?','Do you drink coffee?'],answers:[['我喝咖啡。','wǒ hē kāfēi','I drink coffee.',true],['我叫 Nabil。','wǒ jiào Nabil','My name is Nabil.',false],['你呢？','nǐ ne','And you?',false]]},{bot:['太好了！再见！','tài hǎo le! zàijiàn!','Great! Goodbye!'],answers:[['再见！','zàijiàn','Goodbye!',true],['你好！','nǐ hǎo','Hello!',false],['请。','qǐng','Please.',false]]}];function resetChat(){chatTurn=0;chatHistory=[];renderChat();setTimeout(repeatBot,350)}function repeatBot(){if(chatTurn<chat.length)voice(chat[chatTurn].bot[0])}function renderChat(){let hide=$('hideEnglish').checked;$('chatBubbles').innerHTML=chatHistory.map(x=>`<div class="bubble ${x.who}"><b>${escapeHTML(x.zh)}</b><div class="roman">${escapeHTML(x.py)}</div>${hide?'':`<small>${escapeHTML(x.en)}</small>`}</div>`).join('')+(chatTurn<chat.length?`<div class="bubble bot"><b>${escapeHTML(chat[chatTurn].bot[0])}</b><div class="roman">${escapeHTML(chat[chatTurn].bot[1])}</div>${hide?'':`<small>${escapeHTML(chat[chatTurn].bot[2])}</small>`}</div>`:'<div class="feedback good">🎉 Conversation complete! Play again and try answering without looking at the translations.</div>');$('chatChoices').innerHTML=chatTurn<chat.length?chat[chatTurn].answers.map((x,i)=>`<button class="choice" onclick="answerChat(${i})">${escapeHTML(x[1])}${hide?'':` · ${escapeHTML(x[2])}`}</button>`).join(''):''}function answerChat(i){let a=chat[chatTurn].answers[i];if(!a[3]){$('chatStatus').textContent='Not quite! Listen to the question and try another answer.';voice(chat[chatTurn].bot[0]);return}chatHistory.push({who:'bot',zh:chat[chatTurn].bot[0],py:chat[chatTurn].bot[1],en:chat[chatTurn].bot[2]},{who:'me',zh:a[0],py:a[1],en:a[2]});data.xp+=8;log('conversation',`Completed roleplay turn ${chatTurn+1}`);chatTurn++;renderChat();$('chatStatus').textContent='✅ Correct response! +8 XP';if(chatTurn===chat.length){data.chatCompletions++;data.xp+=20;log('roleplay','Finished full workplace roleplay');$('chatStatus').textContent='🏆 Complete! +20 bonus XP'}else setTimeout(repeatBot,450)}function chatMic(){if(chatTurn>=chat.length)return;recognise(arr=>{let match=chat[chatTurn].answers.findIndex(x=>x[3]&&arr.some(t=>phraseMatch(t,x[0])));data.voiceAttempts++;if(match>=0){data.voiceMatched++;$('chatStatus').textContent=`Heard: ${arr.join(' / ')} · recognised answer!`;answerChat(match)}else{$('chatStatus').textContent=`Heard: ${arr.join(' / ')} · Not confidently matched; you can retry or choose an answer.`;log('conversation speech','Unmatched reply: '+arr.join(' / '))}})}
-const pool=lessons.slice(0,5).flatMap(x=>x.p);function shuffle(a){return [...a].sort(()=>Math.random()-.5)}function startGame(){gQ=shuffle(pool).slice(0,5);gRound=0;gScore=0;showGame()}function showGame(){if(gRound>=gQ.length){$('gameRound').textContent='5 / 5';$('gameArea').innerHTML=`<div class="confetti">${gScore>=4?'🏆🎉':'🌱👏'}</div><h2>Session finished!</h2><p>${gScore}/5 correct · ${gScore*10} XP earned.</p><button class="btn" onclick="startGame()">Play again</button>`;data.games++;log('game',`Listening Quest: ${gScore}/5`);return}gAnswered=false;let p=gQ[gRound],alts=shuffle(pool.filter(x=>x[2]!==p[2])).slice(0,3),opts=shuffle([p,...alts]);$('gameRound').textContent=`${gRound+1} / 5`;$('gameArea').innerHTML=`<div class="phrase"><h3>What did you hear?</h3><button class="btn" onclick="hearGame()">🔊 Play Mandarin audio</button></div><div id="gameAnswers">${opts.map((x,i)=>`<button class="choice" data-answer="${escapeHTML(x[2])}" onclick="answerGame(this)">${escapeHTML(x[2])}</button>`).join('')}</div><div id="gameFeedback" aria-live="polite"></div><button class="btn alt hidden" id="gameNext" onclick="gRound++;showGame()">Next round →</button>`;setTimeout(hearGame,280)}function hearGame(){if(gQ[gRound])voice(gQ[gRound][0])}function answerGame(el){if(gAnswered)return;gAnswered=true;let right=gQ[gRound][2],good=el.dataset.answer===right;data.rounds++;if(good){data.correct++;data.xp+=10;gScore++}log('quiz',`${good?'Correct':'Review'}: ${gQ[gRound][1]} = ${right}`);document.querySelectorAll('#gameAnswers button').forEach(b=>{b.disabled=true;b.classList.add(b.dataset.answer===right?'correct':b===el?'wrong':'')});$('gameFeedback').className='feedback '+(good?'good':'warn');$('gameFeedback').textContent=good?'✅ Correct! +10 XP':`The answer was “${right}” (${gQ[gRound][1]}). Listen once more before continuing.`;$('gameNext').classList.remove('hidden')}
-function renderStats(){$('xpHero').textContent=data.xp;$('mXp').textContent=data.xp;$('mLessons').textContent=data.completed.length;$('mAccuracy').textContent=data.rounds?Math.round(data.correct/data.rounds*100)+'%':'—';$('weekFill').style.width=data.completed.length/7*100+'%';$('weekText').textContent=`${data.completed.length} of 7 lessons completed`}function renderProgress(){renderStats();$('activity').innerHTML=data.activity.length?data.activity.slice(0,15).map(a=>`<div class="word"><div><b>${escapeHTML(a.type)}</b><div class="mini muted">${escapeHTML(a.details)}</div></div><small class="muted">${new Date(a.at).toLocaleDateString()}</small></div>`).join(''):'<p>No activity yet. Start Lesson 1 to begin.</p>';let advice=data.completed.length===0?'Start with greetings. Complete Lesson 1 and play one listening game.':data.rounds>4&&data.correct/data.rounds<.7?'Try a listening game review. Listen to unfamiliar phrases slowly, then repeat.':data.voiceAttempts>3&&data.voiceMatched/data.voiceAttempts<.5?'Practice with slow playback. Recognition can mishear tones, so consider feedback from a proficient speaker.':data.completed.length<7?'Nice progress! Complete the next lesson and reinforce it with workplace roleplay.':'You finished the starter path! Export your data and request a personalised next-level assessment.';$('advice').textContent=advice}function saveReflection(){let note=$('reflection').value.trim();if(!note){$('saveMsg').textContent='Add a short reflection first.';return}data.reflections.push({at:new Date().toISOString(),confidence:Number($('confidence').value),note});log('reflection',note);$('reflection').value='';$('saveMsg').textContent='Reflection saved privately on this device ✓';renderProgress()}function download(name,content,type){let b=new Blob([content],{type}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}function exportJSON(){download('speaklab_nabil_progress_'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify({...data,exportedAt:new Date().toISOString()},null,2),'application/json')}function exportCSV(){let rows=[['timestamp','type','details'],...data.activity.map(a=>[a.at,a.type,a.details])];download('speaklab_activity.csv',rows.map(r=>r.map(s=>'"'+String(s).replaceAll('"','""')+'"').join(',')).join('\n'),'text/csv')}function importJSON(e){let f=e.target.files[0];if(!f)return;let r=new FileReader;r.onload=()=>{try{let d=JSON.parse(r.result);if(d.version!==1||!Array.isArray(d.completed)||!Array.isArray(d.activity)||typeof d.xp!=='number')throw Error('Unrecognised progress format');if(!confirm('Replace this device’s current progress with the selected backup?'))return;data={...defaultData(),...d};save();renderProgress();renderHome();alert('Progress restored ✓')}catch(x){alert('Could not restore: '+x.message)}};r.readAsText(f)}function resetData(){if(!confirm('Delete ALL local SpeakLab progress on this device? Export first if you want a backup.'))return;data=defaultData();save();renderProgress();renderHome()}renderHome();renderStats();resetChat();
-</script></body></html>
+const DATA={"courses":{"MIR703":{"title":"Diplomacy, Security and Cooperation in ASEAN","lecturer":"Dr Amer Fawwaz Mohamad Yasid","day":2,"start":"20:30","end":"23:30","color":"#37b5b0","team_url":"https://teams.microsoft.com/l/channel/19%3AhppaaDUAldRM4xJ3_7aq5fNplQUBCw0rlq6OU03iQ0I1%40thread.tacv2/General?groupId=6c360d1b-822c-4b15-abf2-729d20c1a9fa&tenantId=cdcbb0e2-9fea-4f54-8670-672707797ada","faculty_first_class":"Wed 30 Sep · 8:30–11:30 PM","join_label":"Teams channel"},"MIR704":{"title":"International Political Economy in a Globalised World","lecturer":"Dr Farhatul Mustamirrah Mahamad Aziz","day":3,"start":"20:00","end":"23:00","color":"#a67cff","team_url":"https://teams.microsoft.com/meet/4402815533777?p=jDnblGPCffysGRfrZz","faculty_first_class":"Thu 1 Oct · 8:00–11:00 PM","join_label":"First-class Teams meeting"},"MIR705":{"title":"Seminar in Contemporary Issues in International Relations and Diplomacy","lecturer":"Dr Azman Ayob","day":1,"start":"20:00","end":"23:00","color":"#ffbd5a","team_url":"https://teams.microsoft.com/meet/443140699158500?p=2yQyYQXbzrRNhezTHm","faculty_first_class":"Tue 29 Sep · 8:00–11:00 PM","join_label":"Week 1 Teams meeting"},"MIR710":{"title":"International Conflict Management and Conflict Resolution","lecturer":"Dr Ahmad Shah Pakeer Mohamed","day":0,"start":"20:00","end":"23:00","color":"#51b749","team_url":"https://teams.microsoft.com/meet/4838259818068?p=r15J8cZREoyj90qf9Q","faculty_first_class":"Mon 28 Sep · 8:00–11:00 PM","join_label":"Teams meeting supplied by faculty"}},"events":[{"date":"2026-09-28","code":"MIR710","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-09-29","code":"MIR705","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-09-30","code":"MIR703","start":"20:30","end":"23:30","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-01","code":"MIR704","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-05","code":"MIR710","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-06","code":"MIR705","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-07","code":"MIR703","start":"20:30","end":"23:30","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-08","code":"MIR704","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-12","code":"MIR710","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-13","code":"MIR705","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-14","code":"MIR703","start":"20:30","end":"23:30","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-15","code":"MIR704","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-19","code":"MIR710","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-20","code":"MIR705","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-21","code":"MIR703","start":"20:30","end":"23:30","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-22","code":"MIR704","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-26","code":"MIR710","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-27","code":"MIR705","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-28","code":"MIR703","start":"20:30","end":"23:30","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-10-29","code":"MIR704","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-02","code":"MIR710","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-03","code":"MIR705","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-04","code":"MIR703","start":"20:30","end":"23:30","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-05","code":"MIR704","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-09","code":"MIR710","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-10","code":"MIR705","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-11","code":"MIR703","start":"20:30","end":"23:30","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-12","code":"MIR704","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-16","code":"MIR710","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-17","code":"MIR705","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-18","code":"MIR703","start":"20:30","end":"23:30","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-19","code":"MIR704","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-23","code":"MIR710","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-24","code":"MIR705","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-25","code":"MIR703","start":"20:30","end":"23:30","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-11-26","code":"MIR704","start":"20:00","end":"23:00","venue":"Online","kind":"Weekly online (new first-class timing applied provisionally)"},{"date":"2026-12-05","code":"MIR710","start":"08:30","end":"11:30","venue":"C2051","kind":"Special December/January timetable"},{"date":"2026-12-05","code":"MIR705","start":"14:00","end":"18:00","venue":"C1051","kind":"Special December/January timetable"},{"date":"2026-12-06","code":"MIR704","start":"08:30","end":"12:30","venue":"C2052","kind":"Special December/January timetable"},{"date":"2026-12-06","code":"MIR703","start":"14:00","end":"17:00","venue":"C1048","kind":"Special December/January timetable"},{"date":"2026-12-12","code":"MIR710","start":"08:30","end":"11:30","venue":"Online","kind":"Special December/January timetable"},{"date":"2026-12-12","code":"MIR705","start":"14:00","end":"18:00","venue":"Online","kind":"Special December/January timetable"},{"date":"2026-12-13","code":"MIR704","start":"08:30","end":"12:30","venue":"Online","kind":"Special December/January timetable"},{"date":"2026-12-13","code":"MIR703","start":"14:00","end":"17:00","venue":"Online","kind":"Special December/January timetable"},{"date":"2026-12-19","code":"MIR710","start":"08:30","end":"11:30","venue":"Online","kind":"Special December/January timetable"},{"date":"2026-12-19","code":"MIR705","start":"14:00","end":"18:00","venue":"Online","kind":"Special December/January timetable"},{"date":"2026-12-20","code":"MIR704","start":"08:30","end":"12:30","venue":"Online","kind":"Special December/January timetable"},{"date":"2026-12-20","code":"MIR703","start":"14:00","end":"17:00","venue":"Online","kind":"Special December/January timetable"},{"date":"2027-01-02","code":"MIR710","start":"08:30","end":"11:30","venue":"C2051","kind":"Special December/January timetable"},{"date":"2027-01-02","code":"MIR705","start":"14:00","end":"18:00","venue":"C1051","kind":"Special December/January timetable"},{"date":"2027-01-03","code":"MIR704","start":"08:30","end":"12:30","venue":"C2052","kind":"Special December/January timetable"},{"date":"2027-01-03","code":"MIR703","start":"14:00","end":"17:00","venue":"C1048","kind":"Special December/January timetable"},{"date":"2027-01-09","code":"MIR710","start":"08:30","end":"11:30","venue":"C2051","kind":"Special December/January timetable"},{"date":"2027-01-09","code":"MIR705","start":"14:00","end":"18:00","venue":"C1051","kind":"Special December/January timetable"},{"date":"2027-01-10","code":"MIR704","start":"08:30","end":"12:30","venue":"C2052","kind":"Special December/January timetable"},{"date":"2027-01-10","code":"MIR703","start":"14:00","end":"17:00","venue":"C1048","kind":"Special December/January timetable"}]};
+const MIR710_SOW = [{"week":1,"date":"2026-09-28","title":"Introduction and course briefing","topic":"Course requirements, entrance survey; form group and choose group assignment question.","reading":"Syllabus and SOW.","assessment":"Selected topics: Peacebuilding (individual, Beyls, 20%) and AI & Conflict Management (case study, Far + Beyls, 20%). No submission due this week is confirmed.","takeaway":"Collective security differs from a defensive alliance. A ceasefire limits conflict without necessarily resolving grievances.","extension":"2024 optional: comparative collective-security lecture notes.","source_title":"Collective security: international organisations (journal article)","source_url":"https://www.richtmann.org/journal/index.php/mjss/article/view/5080","personal":""},{"week":2,"date":"2026-10-05","title":"Nature and scope of conflict management","topic":"Conflict/crisis, evolution, conflict dimensions, foundations, causes of violence.","reading":"Jeong (2010), pp. 65–117; Sandole et al. (2009); Sousa (2018).","assessment":"Prepare individual Peacebuilding framework (definition, conditions, structure and criticisms). Your presentation slot will be set by the lecturer.","takeaway":"Horizontal escalation spreads a conflict; vertical escalation increases its intensity. Collective response requires cooperation.","extension":"2024 optional: theory/practice of collective-security institutions.","source_title":"Ruggie 1974: UN and constraints on collective security (free PDF)","source_url":"https://scholar.harvard.edu/files/john-ruggie/files/contingencies_constraints_and_collective_security_perspectives_on_un_involvement_in_international_disputes_0.pdf","personal":""},{"week":3,"date":"2026-10-12","title":"Nature and scope; conflict theories","topic":"Conflict/crisis, conflict-management frameworks and causes of violence.","reading":"Jeong (2010), pp. 65–117; Sandole et al. (2009); Sousa (2018).","assessment":"Develop Peacebuilding slides and a supported case example; the SOW gives the individual-assignment window as weeks 4–6.","takeaway":"Identity, asymmetric power and political structure are key conflict drivers. Match the theory to the specific case.","extension":"SOW Jeong pp. 65-117 focus on identity, power and structure.","source_title":"Joensson 2010: collective security and UN peacekeeping (free thesis)","source_url":"https://hdl.handle.net/1814/14711","personal":""},{"week":4,"date":"2026-10-19","title":"Theory and tools of conflict management","topic":"Management vs. resolution, peace, negotiation, mediation I and arbitration.","reading":"Jeong (2010), pp. 65–117; Bercovitch (2012), pp. 261–266; Wanis-St.John (2014).","assessment":"YOUR INDIVIDUAL TOPIC: PEACEBUILDING (20%, Beyls). Week 4–6 presentation window. Explain definition, conditions, structure and criticisms; your actual slot remains TBC. Note the SOW inconsistently mentions the case-study abstract earlier in the weekly outline.","takeaway":"Negotiation lets parties bargain, mediation uses a third-party facilitator, and arbitration transfers decision-making to a neutral.","extension":"Jeong chs. 8-9 are topical supplements; full textbook needs lawful access.","source_title":"Jeong 2010: negotiation and mediation chapters (publisher page)","source_url":"https://www.routledge.com/Conflict-Management-and-Resolution-An-Introduction/Jeong/p/book/9780415450416","personal":"🟣 Peacebuilding · individual assignment (20%) · Beyls"},{"week":5,"date":"2026-10-26","title":"Theory and tools of conflict management","topic":"Negotiation, mediation I, arbitration; case-study presentation work.","reading":"Jeong (2010); Bercovitch (2012); Wanis-St.John (2014).","assessment":"PEACEBUILDING (20%, Beyls) — individual presentation window continues. Rehearse a clear explanation of definition, conditions, structure and criticisms; confirm actual slot.","takeaway":"Third-party diplomacy depends on leverage, trust, procedural consent and follow-through.","extension":"2024 materials are optional enrichment, not a confirmed 2026 week list.","source_title":"Butler 2009: international conflict management (publisher page)","source_url":"https://www.routledge.com/International-Conflict-Management/Butler/p/book/9780415772303","personal":"🟣 Peacebuilding · individual assignment (20%) · Beyls"},{"week":6,"date":"2026-11-02","title":"Theory and tools of conflict management","topic":"Negotiation, mediation I, arbitration; case-study presentation work.","reading":"Jeong (2010); Bercovitch (2012); Wanis-St.John (2014).","assessment":"PEACEBUILDING (20%, Beyls) — final week of the SOW individual-presentation window. Check whether you have already presented and get the confirmed date from the lecturer.","takeaway":"Compare methods by decision authority, consent and outcomes: containment, settlement and transformation.","extension":"Check individual assignment presentation slot with current lecturer.","source_title":"Butcher & Hallward 2020: mechanisms (publisher page)","source_url":"https://www.routledge.com/Understanding-International-Conflict-Management/Butcher-Hallward/p/book/9781138329560","personal":"🟣 Peacebuilding · individual assignment (20%) · Beyls"},{"week":7,"date":"2026-11-09","title":"Reconciliation and peace operations","topic":"Peacekeeping, peace enforcement, peacebuilding and post-conflict reconstruction.","reading":"Patterson (2012); Mani (1998); Simonovic (2003).","assessment":"YOUR 20% CASE STUDY with Far: ARTIFICIAL INTELLIGENCE AND CONFLICT MANAGEMENT — OPPORTUNITIES AND RISKS. Suggested preparation: share early-warning/predictive-analytics readings, assess peace-tech opportunities, map political and ethical risks. Group project in the weekly SOW is separate.","takeaway":"Peacekeeping, peace enforcement and peacebuilding serve distinct functions. UN peacekeeping is guided by consent, impartiality, and limited force.","extension":"2024 optional: institutional collective-security lens.","source_title":"UN: official principles of peacekeeping (free)","source_url":"https://peacekeeping.un.org/en/node/132275","personal":"🟢 AI & Conflict Management · case study (20%) · Far + Beyls"},{"week":8,"date":"2026-11-16","title":"Reconciliation and peace operations","topic":"Peacekeeping, peace enforcement, peacebuilding and post-conflict reconstruction.","reading":"Patterson (2012); Mani (1998); Simonovic (2003).","assessment":"AI CASE STUDY (20%, Far + Beyls): SOW assessment section says abstract BY WEEK 8; this planner maps week 8 to 16 Nov provisionally. Confirm exact submission date, joint-submission requirements and presentation week. Do not confuse with separate 30% simulation.","takeaway":"Ending fighting, reconstructing institutions and reconciling communities are separate tasks; mission exit is not proof of lasting peace.","extension":"Case-study abstract by SOW week 8 is provisional; confirm date.","source_title":"Joensson: critique of UNPROFOR and post-conflict peace (free)","source_url":"https://hdl.handle.net/1814/14711","personal":"🟢 AI & Conflict Management · case study (20%) · Far + Beyls"},{"week":9,"date":"2026-11-23","title":"Reconciliation and peace operations","topic":"Peacekeeping, peace enforcement, peacebuilding and post-conflict reconstruction.","reading":"Patterson (2012); Mani (1998); Simonovic (2003).","assessment":"After AI abstract checkpoint, follow lecturer guidance on any case-study presentation. The separate 30% Peace Conference simulation still requires its own scenario and deliverable.","takeaway":"Evaluate mandates, consent, legitimacy, resources and local ownership rather than just counting successful deployments.","extension":"2024 optional: Joensson former-Yugoslavia case critique.","source_title":"UN: principles of peacekeeping (free)","source_url":"https://peacekeeping.un.org/en/node/132275","personal":""},{"week":10,"date":"2026-12-05","title":"Coercion and humanitarian problems","topic":"Conflict managers, strategies and roles of actors in conflict management.","reading":"Confirm lecturer readings: SOW references appear to belong to another subject.","assessment":"Group project/seminar presentation noted.","takeaway":"R2P focuses on genocide, war crimes, ethnic cleansing and crimes against humanity; first responsibility lies with the state.","extension":"2024 optional: R2P lecture slides; physical class Room C2051.","source_title":"United Nations: Responsibility to Protect (free)","source_url":"https://www.un.org/en/node/25514","personal":""},{"week":11,"date":"2026-12-12","title":"Coercion and humanitarian problems","topic":"Conflict managers, strategies and roles of actors in conflict management.","reading":"Confirm lecturer readings: SOW references appear to belong to another subject.","assessment":"Group project/seminar presentation noted.","takeaway":"Differentiate collective security, collective defence and cooperative security and identify which actors hold the relevant authority.","extension":"2024 optional: comparative UN / NATO / EU / OSCE material.","source_title":"Collective security: institutions compared (free article)","source_url":"https://www.richtmann.org/journal/index.php/mjss/article/view/5080","personal":""},{"week":12,"date":"2026-12-19","title":"Coercion and humanitarian problems","topic":"Conflict managers, strategies and roles of actors in conflict management.","reading":"Jeong (2010); Wani (2011).","assessment":"Group project presentation window: weeks 12–13 (verify date).","takeaway":"R2P is narrower than IHL; coercive humanitarian actions remain subject to the UN Charter legal framework.","extension":"2024 optional: R2P three pillars and critiques.","source_title":"UN 2005 World Summit: R2P paras. 138-139 (free)","source_url":"https://www.un.org/en/conferences/environment/newyork2005","personal":""},{"week":13,"date":"2027-01-02","title":"Case studies and seminar","topic":"Jammu–Kashmir; Israel–Palestine; North–South Korea.","reading":"Jeong (2010); Wani (2011).","assessment":"Group project presentation and group assignment submission noted for week 13 (verify date).","takeaway":"Apply actor and grievance mapping separately to Jammu-Kashmir, Israel-Palestine and North-South Korea.","extension":"These are historical case comparisons, not verified updates on contemporary developments.","source_title":"Jeong 2010: identity, power and structure (publisher page)","source_url":"https://www.routledge.com/Conflict-Management-and-Resolution-An-Introduction/Jeong/p/book/9780415450416","personal":""},{"week":14,"date":"2027-01-09","title":"Case studies and seminar","topic":"Jammu–Kashmir; Israel–Palestine; North–South Korea.","reading":"Jeong (2010); Wani (2011).","assessment":"Seminar presentations. Confirm precise submission dates.","takeaway":"Distinguish containment, negotiated settlement, conflict resolution and transformation; evaluate case transferability.","extension":"2024 readings are supplementary; confirm seminar and examination details.","source_title":"Butler 2009: synthesis and comparison (publisher page)","source_url":"https://www.routledge.com/International-Conflict-Management/Butler/p/book/9780415772303","personal":""}];
+const HUB="https://docs.google.com/document/d/1zAFOhtnC_G2ZE5-aPUNHJ_2b3PMtZKjgeicyuu9CkSw/edit";
+const MARKERS={"2026-10-19":{name:"Peacebuilding window",type:"peace"},"2026-10-26":{name:"Peacebuilding prep",type:"peace"},"2026-11-02":{name:"Peacebuilding window",type:"peace"},"2026-11-09":{name:"AI research with Far",type:"ai"},"2026-11-16":{name:"AI abstract checkpoint*",type:"ai"}};
+const ASSN=[
+ {id:"individual",co:"var(--peace)",tag:"20% · Individual assignment",title:"Peacebuilding",who:"Beyls",when:"SOW weeks 4–6 · 19 Oct – 2 Nov",date:"Presentation slot TBC",
+  desc:"Explain the concept systematically and present it creatively, for example as slides, a poster or a video.",
+  explainTitle:"What you need to explain (from the SOW)",
+  explain:["Definition: what peacebuilding means and why it matters.","Conditions: when it is undertaken and any prerequisites.","Structure: institutions, actors and typical components.","Criticisms: conceptual and practical limitations."],
+  note:"Illustrations and reading choices are suggestions; the four-part structure comes from the SOW.",
+  tasks:["Prepare an evidence-based definition of peacebuilding.","Describe its conditions and its place in the post-conflict process.","Map its structure, relevant institutions and key actors.","Evaluate criticisms and use at least one clearly evidenced example.","Build and rehearse my presentation; confirm my lecturer-assigned slot."],
+  links:[["MIR710 Reading Hub",HUB],["UN: An Agenda for Peace (1992)","https://digitallibrary.un.org/record/144858/?v=pdf"]]},
+ {id:"case",co:"var(--ai)",tag:"20% · Case study with Far",title:"Artificial Intelligence and Conflict Management: Opportunities and Risks",who:"Far + Beyls",when:"Abstract by SOW week 8 · 16 Nov",date:"Presentation TBC",
+  desc:"Examine how AI and peace technology may support conflict early warning, and analyse the ethical and political implications.",
+  explainTitle:"The two tasks stated in the SOW",
+  explain:["Assess how AI tools, particularly predictive analytics and peace tech, can enhance conflict early-warning systems.","Discuss the ethical and political implications."],
+  note:"Suggested prompts: where could early warnings improve decisions? What are the risks of bias, unreliable data, surveillance or unequal political influence? These are study prompts, not extra SOW requirements.",
+  tasks:["Agree with Far on a clear research question and division of work.","Locate scholarly sources on AI, predictive analytics and peace technology.","Evaluate early-warning opportunities and at least one evidence-based application.","Assess ethical and political limitations, including data quality and accountability.","Draft and review the abstract with Far; confirm submission instructions and presentation date."],
+  links:[["MIR710 Reading Hub",HUB],["UN: preventive diplomacy and early warning","https://digitallibrary.un.org/record/144858/?v=pdf"]]}
+];
+const CHECKPOINTS=[
+ {co:"var(--peace)",d:"19 Oct – 2 Nov",t:"Peacebuilding presentation window (20%, Beyls)"},
+ {co:"var(--ai)",d:"9 Nov · Week 7",t:"Suggested progress check with Far: sources, argument and abstract draft"},
+ {co:"var(--ai)",d:"16 Nov · Week 8",t:"AI case-study abstract checkpoint (20%, Far + Beyls); exact due date TBC"}
+];
+const KEYDATES=[["28 Sep","Semester and weekly online classes begin"],["21–27 Dec","Mid-semester / special break (online classes are still listed on 20 Dec)"],["11–17 Jan","Revision week"],["18 Jan – 7 Feb","Final examination period; exact exam dates not yet supplied"]];
+
+const C=DATA.courses,E=DATA.events,ORDER=["MIR710","MIR705","MIR703","MIR704"];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const todayStr=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kuala_Lumpur",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+const P=s=>{const[y,m,d]=s.split("-").map(Number);return new Date(Date.UTC(y,m-1,d))};
+const ISO=d=>d.toISOString().slice(0,10);
+const add=(s,n)=>{const d=P(s);d.setUTCDate(d.getUTCDate()+n);return ISO(d)};
+const dow=s=>(P(s).getUTCDay()+6)%7;
+const F=(s,o)=>new Intl.DateTimeFormat("en-MY",Object.assign({timeZone:"UTC"},o)).format(P(s));
+const fDay=s=>F(s,{weekday:"short",day:"numeric",month:"short"});
+const tm=t=>{let[h,m]=t.split(":").map(Number);return `${h%12||12}:${String(m).padStart(2,"0")} ${h>=12?"PM":"AM"}`};
+const at=(d,t)=>new Date(`${d}T${t}:00+08:00`).getTime();
+const co=k=>`var(--c-${k})`;
+const inBreak=d=>d>="2026-12-21"&&d<="2026-12-27";
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const venue=e=>e.venue==="Online"?"Online":"Room "+e.venue;
+const joinBtn=(k,cls="btn sm primary")=>`<a class="${cls}" href="${esc(C[k].team_url)}" target="_blank" rel="noopener noreferrer">Join on Teams ↗</a>`;
+
+/* ---------- state ---------- */
+let TAB="overview",cy=2026,cm=8,sel=null,active=new Set(ORDER),week=null;
+const T=todayStr();{const[y,m]=T.split("-").map(Number);if(T>="2026-09-01"&&T<="2027-01-31"){cy=y;cm=m-1}}
+
+/* ---------- overview ---------- */
+function nextEvent(){const now=Date.now();return E.map(e=>({...e,s:at(e.date,e.start),en:at(e.date,e.end)})).sort((a,b)=>a.s-b.s).find(e=>e.en>now)}
+function countdown(e){const now=Date.now();if(now>=e.s)return `<span class="live"><i></i>Live now · ends ${tm(e.end)}</span>`;let m=Math.round((e.s-now)/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mi=m%60;return `<span class="big">${d?d+"d ":""}${h}h ${String(mi).padStart(2,"0")}m</span><span class="muted">until class starts</span>`}
+function checked(id){return ASSN.find(a=>a.id===id).tasks.filter((_,i)=>store.get(`MIRAD710-v1-${id}-${i+1}`)==="true").length}
+function ring(n,t,c){const r=22,L=2*Math.PI*r;return `<svg class="ring" width="52" height="52" viewBox="0 0 52 52" style="--co:${c}"><circle class="bg" cx="26" cy="26" r="${r}"/><circle class="fg" cx="26" cy="26" r="${r}" stroke-dasharray="${L}" stroke-dashoffset="${L}" data-off="${L*(1-n/t)}"/><text x="26" y="30" text-anchor="middle">${n}/${t}</text></svg>`}
+function animateRings(){requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll(".ring .fg").forEach(c=>c.style.strokeDashoffset=c.dataset.off)))}
+function overview(){
+  const n=nextEvent();const mon=add(T,-dow(T));
+  let wk="";for(let i=0;i<7;i++){const d=add(mon,i),ev=E.filter(e=>e.date===d);wk+=`<div class="wd ${d===T?"today":""}" style="--i:${i}"><div><div class="dn">${F(d,{weekday:"short"})}</div><div class="dd">${F(d,{day:"numeric"})}</div></div><div class="wevs">${ev.map(e=>`<div class="wev" style="--co:${co(e.code)}"><b>${e.code}</b>${tm(e.start)}</div>`).join("")||(inBreak(d)?'<div class="wev muted" style="--co:var(--line)">Break</div>':"")}</div></div>`}
+  const nextCp=CHECKPOINTS[0];
+  return `<div class="stack">
+  <div class="grid2">
+    ${n?`<section class="card next" style="--co:${co(n.code)}">
+      <div class="eyebrow">Next class</div>
+      <div class="code" style="margin-top:10px">${n.code}</div>
+      <h3>${esc(C[n.code].title)}</h3>
+      <div class="meta"><span class="pill">📅 ${fDay(n.date)}</span><span class="pill mono">${tm(n.start)} – ${tm(n.end)}</span><span class="pill">${n.venue==="Online"?"🌐 Online":"🏫 Room "+n.venue}</span></div>
+      <div class="count" id="cd">${countdown(n)}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">${n.venue==="Online"?joinBtn(n.code,"btn primary"):""}<button class="btn" onclick="goDay('${n.date}')">See in calendar</button></div>
+    </section>`:`<section class="card"><h3>No more classes</h3><p class="muted">The class timetable ends on 10 Jan 2027. Revision week follows.</p></section>`}
+    <section class="card">
+      <div class="sec-title"><h2>My assignments</h2><button class="btn sm" onclick="go('assignments')">Open checklist</button></div>
+      <div class="mini-assn">${ASSN.map(a=>`<div class="ma">${ring(checked(a.id),a.tasks.length,a.co)}<div><h4>${esc(a.title.length>40?"AI & Conflict Management":a.title)}</h4><small>${a.tag} · ${a.when}</small></div></div>`).join("")}</div>
+      <div class="warn" style="margin-top:14px"><b>Coming up:</b> ${nextCp.d} — ${nextCp.t}</div>
+    </section>
+  </div>
+  <section class="card">
+    <div class="sec-title"><h2>This week</h2><span class="muted" style="font-size:13px">${F(mon,{day:"numeric",month:"short"})} – ${F(add(mon,6),{day:"numeric",month:"short",year:"numeric"})}</span></div>
+    <div class="week">${wk}</div>
+  </section>
+  <section class="card">
+    <div class="sec-title"><h2>Key semester dates</h2></div>
+    <div class="keydates">${KEYDATES.map(k=>`<div class="kd"><b>${k[0]}</b><span>${k[1]}</span></div>`).join("")}</div>
+  </section></div>`}
+
+/* ---------- calendar ---------- */
+function calendar(dir){
+  const first=ISO(new Date(Date.UTC(cy,cm,1))),off=dow(first),dim=new Date(Date.UTC(cy,cm+1,0)).getUTCDate(),cells=Math.ceil((off+dim)/7)*7;
+  if(!sel||P(sel).getUTCMonth()!==cm||P(sel).getUTCFullYear()!==cy){const inM=E.filter(e=>e.date.startsWith(first.slice(0,7))&&active.has(e.code)).map(e=>e.date);sel=T.startsWith(first.slice(0,7))?T:(inM.find(d=>d>=T)||inM[0]||first)}
+  let g=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map(d=>`<div class="wk">${d}</div>`).join("");
+  for(let i=0;i<cells;i++){const d=add(first,i-off),ev=E.filter(e=>e.date===d&&active.has(e.code)),mk=active.has("MIR710")&&MARKERS[d];const other=P(d).getUTCMonth()!==cm;
+    g+=`<button class="day ${other?"other":""} ${d===T?"today":""} ${d===sel?"sel":""} ${inBreak(d)?"brk":""}" data-d="${d}" aria-label="${fDay(d)}, ${ev.length} classes">
+      <span class="num">${P(d).getUTCDate()}</span>
+      ${ev.map(e=>`<span class="chip" style="--co:${co(e.code)}"><b>${e.code}</b> ${tm(e.start).replace(":00","").replace(" ","").toLowerCase()}</span>`).join("")}
+      ${mk?`<span class="chip assn ${mk.type==="ai"?"ai":""}">📝 ${mk.name}</span>`:""}
+      <span class="dots">${ev.map(e=>`<i class="dot" style="--co:${co(e.code)}"></i>`).join("")}${mk?`<i class="dot sq" style="--co:${mk.type==="ai"?"var(--ai)":"var(--peace)"}"></i>`:""}</span>
+    </button>`}
+  const title=new Date(Date.UTC(cy,cm,1)).toLocaleDateString("en-MY",{month:"long",year:"numeric",timeZone:"UTC"});
+  return `<div class="cal-layout">
+   <section class="card">
+    <div class="cal-head"><h2>${title}</h2>
+      <button class="iconbtn" aria-label="Previous month" onclick="moveM(-1)">←</button>
+      <button class="btn sm" onclick="toToday()">Today</button>
+      <button class="iconbtn" aria-label="Next month" onclick="moveM(1)">→</button></div>
+    <div class="filters">${ORDER.map(k=>`<button class="fchip" aria-pressed="${active.has(k)}" style="--co:${co(k)}" onclick="toggleC('${k}')"><i class="dot"></i>${k}</button>`).join("")}</div>
+    <div class="cal ${dir?(dir>0?"slide-l":"slide-r"):""}" id="cal">${g}</div>
+    <div class="legend"><span><i class="sw" style="background:var(--peace)"></i>Peacebuilding plan</span><span><i class="sw" style="background:var(--ai)"></i>AI case study plan</span><span><i class="sw" style="background:repeating-linear-gradient(135deg,var(--surface2),var(--surface2) 3px,var(--line) 3px,var(--line) 6px)"></i>Semester break</span></div>
+   </section>
+   <aside class="card dayview" id="dayview">${dayView(sel)}</aside>
+  </div>
+  <details class="note"><summary>Schedule notes and assumptions</summary><div class="body">
+   <p><b>Class times:</b> the newest faculty link sheet has MIR710, MIR705 and MIR704 starting at 8:00 PM and MIR703 at 8:30 PM. These first-class times are applied provisionally to the weekly online classes through November.</p>
+   <p><b>End of weekly classes:</b> the timetable says weekly online classes start on 28 September but gives no final week. This planner assumes they run through 26 November, then uses the separately listed December–January weekend timetable (dates, times and rooms unchanged). Confirm with your faculty.</p>
+   <p><b>Courses shown:</b> only your four modules. MIR706 and MIR711 are excluded.</p>
+   <p><b>Teams links:</b> some are labelled First Class or Week 1. Check later-session access with your lecturer.</p>
+  </div></details>`}
+function dayView(d){
+  const ev=E.filter(e=>e.date===d&&active.has(e.code)),mk=MARKERS[d],sw=(SOW_BY_DATE[d]);
+  let h=`<div class="eyebrow">${d===T?"Today":F(d,{weekday:"long"})}</div><h3>${F(d,{day:"numeric",month:"long",year:"numeric"})}</h3>`;
+  if(!ev.length&&!mk)h+=`<div class="empty">${inBreak(d)?"Mid-semester break. No classes.":"No classes on this day."}</div>`;
+  h+=ev.map((e,i)=>`<div class="ev" style="--co:${co(e.code)};--i:${i}"><div class="row" style="justify-content:space-between"><span class="c">${e.code}</span><span class="t">${tm(e.start)} – ${tm(e.end)}</span></div><p>${esc(C[e.code].title)}</p><div class="row"><span class="pill">${e.venue==="Online"?"🌐 Online":"🏫 Room "+e.venue}</span>${e.venue==="Online"?joinBtn(e.code):""}</div></div>`).join("");
+  if(mk)h+=`<div class="ev" style="--co:${mk.type==="ai"?"var(--ai)":"var(--peace)"};--i:${ev.length}"><span class="c">📝 ${mk.name}</span><p class="muted">Planning checkpoint, not a confirmed deadline.</p><button class="btn sm" onclick="go('assignments')">Open assignment</button></div>`;
+  if(sw&&active.has("MIR710"))h+=`<button class="btn sm" style="margin-top:4px" onclick="week=${sw.week};go('mir710')">MIR710 week ${sw.week}: ${esc(sw.title)} →</button>`;
+  return h}
+
+/* ---------- courses ---------- */
+function courses(){
+  return `<div class="courses">${ORDER.map((k,i)=>{const c=C[k],ev=E.filter(e=>e.code===k),done=ev.filter(e=>e.date<T).length,nx=ev.find(e=>at(e.date,e.end)>Date.now());
+   return `<article class="card course" style="--co:${co(k)};--i:${i}">
+    <div class="hd"><span class="code">${k}</span><span class="pill">${k==="MIR703"?"Teams channel":"Teams meeting"}</span></div>
+    <h3>${esc(c.title)}</h3>
+    <dl class="facts"><dt>Lecturer</dt><dd>${esc(c.lecturer)}</dd><dt>First class</dt><dd>${esc(c.faculty_first_class)}</dd><dt>Weekly online</dt><dd class="mono" style="font-size:13px">${["Mon","Tue","Wed","Thu"][c.day]} · ${tm(c.start)}–${tm(c.end)}</dd><dt>Next session</dt><dd>${nx?`${fDay(nx.date)} · ${tm(nx.start)} · ${venue(nx)}`:"All sessions done"}</dd></dl>
+    <div class="foot"><div style="display:flex;align-items:center;gap:10px;flex:1"><div class="bar"><i style="width:0" data-w="${done/ev.length*100}%"></i></div><small class="muted mono">${done}/${ev.length}</small></div>${joinBtn(k)}</div>
+   </article>`}).join("")}</div>
+   <div class="warn" style="margin-top:16px"><b>Check your class times:</b> MIR710, MIR705 and MIR704 start at 8:00 PM; MIR703 starts at 8:30 PM (from the newest faculty link sheet). December–January weekend sessions keep their own times and rooms. Some links are labelled First Class or Week 1, so confirm later-session access with your lecturer.</div>`}
+
+/* ---------- assignments ---------- */
+function assignments(){
+  return `<div class="stack"><div class="assns">${ASSN.map(a=>{const n=checked(a.id);return `<article class="card assn" style="--co:${a.co}">
+    <div class="hdr"><div><div class="tag">${a.tag}</div><h3 style="margin-top:6px">${esc(a.title)}</h3></div>${ring(n,a.tasks.length,a.co)}</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="pill">👤 ${a.who}</span><span class="pill">🗓 ${a.when}</span><span class="pill">${a.date}</span></div>
+    <p style="margin:0;font-size:14px">${a.desc}</p>
+    <div class="explain"><b>${a.explainTitle}</b><ol>${a.explain.map(x=>`<li>${x}</li>`).join("")}</ol><em>${a.note}</em></div>
+    <div><div class="eyebrow" style="margin-bottom:4px">Checklist</div>${a.tasks.map((t,i)=>{const k=`MIRAD710-v1-${a.id}-${i+1}`;return `<label class="check"><input type="checkbox" id="${k}" data-k="${k}" ${store.get(k)==="true"?"checked":""}><span>${t}</span></label>`}).join("")}</div>
+    <div class="links">${a.links.map(l=>`<a class="btn sm" href="${l[1]}" target="_blank" rel="noopener noreferrer">${l[0]} ↗</a>`).join("")}</div>
+   </article>`}).join("")}</div>
+   <section class="card"><div class="sec-title"><h2>Planning checkpoints</h2><span class="muted" style="font-size:13px">Not confirmed submission deadlines</span></div>
+    <div class="timeline">${CHECKPOINTS.map(c=>`<div class="tl" style="--co:${c.co}"><b>${c.d}</b><span>${c.t}</span></div>`).join("")}</div></section>
+   <div class="warn"><b>Keep these separate:</b> the SOW calls the 20% case study an individual assessment, but you and Far are working on it together, so confirm the submission format with your lecturer. The separate 30% Peace Conference simulation has no confirmed topic yet and is not the AI topic.</div></div>`}
+
+/* ---------- MIR710 ---------- */
+const SOW_BY_DATE={};MIR710_SOW.forEach(w=>SOW_BY_DATE[w.date]=w);
+function curWeek(){let w=1;MIR710_SOW.forEach(x=>{if(x.date<=T)w=x.week});return w}
+function mir710(){
+  if(!week)week=curWeek();const cw=curWeek(),w=MIR710_SOW.find(x=>x.week===week);
+  const WT=[["Peacebuilding","Individual · weeks 4–6",20,"var(--peace)"],["AI case study","Far + Beyls · abstract wk 8",20,"var(--ai)"],["Peace Conference simulation","Group · weeks 12–13",30,"var(--c-MIR705)"],["Final exam","4 questions · 18 Jan – 7 Feb",30,"var(--muted)"]];
+  return `<div class="stack">
+  <section class="card">
+    <div class="sec-title"><h2>How MIR710 is graded</h2><span class="muted" style="font-size:13px">Dr Ahmad Shah Pakeer Mohamed · 3 credits · blended</span></div>
+    <div class="weights">${WT.map((x,i)=>`<div style="flex:${x[2]};background:${x[3]};--i:${i}">${x[2]}%</div>`).join("")}</div>
+    <div class="wlegend">${WT.map(x=>`<div><b>${x[2]}% · ${x[0]}</b><span>${x[1]}</span></div>`).join("")}</div>
+  </section>
+  <section class="card">
+    <div class="sec-title"><h2>Pick a week</h2><span class="muted" style="font-size:13px">Dot = this week</span></div>
+    <div class="weekstrip">${MIR710_SOW.map(x=>`<button class="wbtn ${x.week<cw?"past":""} ${x.week===cw?"now":""}" aria-pressed="${x.week===week}" onclick="week=${x.week};render()" ${x.personal?`style="--mk:${x.personal.includes("AI")?"var(--ai)":"var(--peace)"}"`:""}><b>${x.week}</b><small>${F(x.date,{day:"numeric",month:"short"})}</small>${x.personal?'<i class="mk"></i>':""}</button>`).join("")}</div>
+    <div class="wdetail panel" key="${week}">
+      <div>
+        <div class="eyebrow">Week ${w.week} · ${F(w.date,{weekday:"short",day:"numeric",month:"short",year:"numeric"})}</div>
+        <h3>${esc(w.title)}</h3>
+        ${w.personal?`<span class="pill personal">${esc(w.personal)}</span>`:""}
+        <div class="kv">
+          <div><h4>Topic</h4><p>${esc(w.topic)}</p></div>
+          <div class="takeaway"><h4>In one minute</h4><p>${esc(w.takeaway)}</p></div>
+          <div><h4>SOW reading</h4><p>${esc(w.reading)}</p><p class="muted" style="font-size:13px;margin-top:4px">${esc(w.extension)}</p></div>
+        </div>
+      </div>
+      <div class="kv">
+        <div class="milestone"><h4 style="color:inherit">Assessment &amp; class</h4><p>${esc(w.assessment)}</p></div>
+        <div><h4>Read</h4><div class="links"><a class="btn sm" href="${w.source_url}" target="_blank" rel="noopener">${esc(w.source_title)} ↗</a><a class="btn sm" href="${HUB}" target="_blank" rel="noopener">Full Reading Hub ↗</a></div></div>
+        <div style="display:flex;gap:8px"><button class="btn sm" ${week<=1?"disabled":""} onclick="week--;render()">← ${week>1?"Week "+(week-1):"Previous"}</button><button class="btn sm" ${week>=14?"disabled":""} onclick="week++;render()">${week<14?"Week "+(week+1):"Next"} →</button></div>
+      </div>
+    </div>
+  </section>
+  <details class="note"><summary>About the SOW dates and readings</summary><div class="body">
+    <p>The week-to-date mapping is a provisional study plan based on your class timetable. The SOW cover says Oct 2026 – Feb 2027, but its body still has old semester dates and some unrelated reading and outcome text. <b>Do not treat these checkpoints as confirmed submission dates.</b></p>
+    <p>The 2024 collective-security and R2P materials in the Reading Hub are optional historical background, not confirmed content for this semester. The case-study abstract is also mentioned earlier in the weekly outline, so check which instruction applies.</p>
+    <p>Your Google Calendar already has selected planning reminders and a pre-class MIR710 reading brief one hour before class. Do not import a second calendar with the same events.</p>
+  </div></details></div>`}
+
+/* ---------- render / routing ---------- */
+const VIEWS={overview,calendar,courses,assignments,mir710};
+function moveInd(){const b=document.getElementById("t-"+TAB),ind=document.getElementById("ind");ind.style.width=b.offsetWidth+"px";ind.style.transform=`translateX(${b.offsetLeft-4}px)`;b.scrollIntoView({block:"nearest",inline:"nearest"})}
+function updateCount(){document.getElementById("assnCount").textContent=`${ASSN.reduce((s,a)=>s+checked(a.id),0)}/10`}
+function render(dir){
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.tab===TAB));
+  const v=document.getElementById("view");v.innerHTML=`<div class="panel">${VIEWS[TAB](dir)}</div>`;
+  moveInd();updateCount();animateRings();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll(".bar i").forEach(b=>b.style.width=b.dataset.w)));
+}
+function go(t){TAB=t;store.set("mirad-tab",t);render();window.scrollTo({top:0,behavior:"smooth"})}
+function goDay(d){const[y,m]=d.split("-").map(Number);cy=y;cm=m-1;sel=d;go("calendar")}
+function moveM(n){cm+=n;if(cm<0){cm=11;cy--}if(cm>11){cm=0;cy++}sel=null;renderCal(n)}
+function toToday(){const[y,m]=T.split("-").map(Number);const d=(cy*12+cm)-(y*12+m-1);cy=y;cm=m-1;sel=T;renderCal(d>0?-1:1)}
+function toggleC(k){if(active.has(k)){if(active.size>1)active.delete(k)}else active.add(k);renderCal()}
+function renderCal(dir){document.getElementById("view").firstElementChild.innerHTML=calendar(dir)}
+
+document.getElementById("tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(b)go(b.dataset.tab)});
+document.getElementById("tabs").addEventListener("keydown",e=>{if(!["ArrowLeft","ArrowRight"].includes(e.key))return;const k=Object.keys(VIEWS),i=k.indexOf(TAB)+(e.key==="ArrowRight"?1:-1);if(k[i]){go(k[i]);document.getElementById("t-"+k[i]).focus()}});
+document.getElementById("view").addEventListener("click",e=>{const d=e.target.closest(".day");if(!d)return;sel=d.dataset.d;const p=P(sel);if(p.getUTCMonth()!==cm){const dir=(p.getUTCFullYear()*12+p.getUTCMonth())>(cy*12+cm)?1:-1;cy=p.getUTCFullYear();cm=p.getUTCMonth();renderCal(dir);return}
+  document.querySelectorAll(".day.sel").forEach(x=>x.classList.remove("sel"));d.classList.add("sel");document.getElementById("dayview").innerHTML=dayView(sel);if(innerWidth<960)document.getElementById("dayview").scrollIntoView({behavior:"smooth",block:"nearest"})});
+document.getElementById("view").addEventListener("change",e=>{const k=e.target.dataset&&e.target.dataset.k;if(!k)return;store.set(k,String(e.target.checked));const card=e.target.closest(".assn"),id=k.split("-")[2],a=ASSN.find(x=>x.id===id),n=checked(id);card.querySelector(".ring").outerHTML=ring(n,a.tasks.length,a.co);animateRings();updateCount()});
+addEventListener("resize",moveInd);
+setInterval(()=>{const el=document.getElementById("cd"),n=nextEvent();if(el&&n)el.innerHTML=countdown(n)},30000);
+
+const h=location.hash.slice(1);TAB=VIEWS[h]?h:(VIEWS[store.get("mirad-tab")]?store.get("mirad-tab"):"overview");
+render();
+if(document.fonts)document.fonts.ready.then(moveInd);
+</script>
