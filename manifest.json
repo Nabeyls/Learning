@@ -1,0 +1,16 @@
+{
+  "name": "MIRAD Semester 3 Planner",
+  "short_name": "MIRAD",
+  "description": "Classes, Teams links, assignments and weekly SOW for MIRAD Semester 3.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f2f4f8",
+  "theme_color": "#0d8a73",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MIRAD">
 <meta name="theme-color" content="#f2f4f8">
 <meta name="description" content="MIRAD Semester 3 academic calendar, Teams links, MIR703/MIR704/MIR710 weekly SOWs and assignment planning for September 2026 to February 2027.">
 <title>MIRAD Semester 3 | Interactive Academic Calendar 2026–27</title>
@@ -795,6 +802,9 @@ setInterval(()=>{const el=document.getElementById("cd"),n=nextEvent();if(el&&n)e
 const h=location.hash.slice(1);TAB=VIEWS[h]?h:(VIEWS[store.get("mirad-tab")]?store.get("mirad-tab"):"overview");
 render();
 if(document.fonts)document.fonts.ready.then(moveInd);
+</script>
+<script>
+if("serviceWorker" in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}
 </script>
 </body>
 </html>
